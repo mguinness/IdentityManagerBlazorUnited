@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-BlazorApp1-03d1796b-1424-457e-a5dd-c897c0d72044</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="FileBaseContext">
+      <HintPath>FileBaseContext.dll</HintPath>
+    </Reference>
+  </ItemGroup>  
+  
+  <ItemGroup>
+    <!--PackageReference Include="FileBaseContext" Version="1.0.2" /-->
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="FileBaseContext\**" />
+    <ProjectReference Include="..\BlazorApp1.Client\BlazorApp1.Client.csproj" />
+  </ItemGroup>
+  
+</Project>

@@ -1,0 +1,14 @@
+[
+  {
+    "Id": "1297337585",
+    "ClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name",
+    "ClaimValue": "Administrator",
+    "UserId": "6d7023cd-1d1a-4876-8158-9bf902f6bbe9"
+  },
+  {
+    "Id": "1540675965",
+    "ClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/gender",
+    "ClaimValue": "Male",
+    "UserId": "ab8b4779-04a5-454a-854f-a57ce0b97db8"
+  }
+]

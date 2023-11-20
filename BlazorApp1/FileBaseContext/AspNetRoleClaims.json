@@ -1,0 +1,8 @@
+[
+  {
+    "Id": "364517371",
+    "ClaimType": "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/country",
+    "ClaimValue": "USA",
+    "RoleId": "89517fbc-8506-41fc-b06c-f1b07ad05ae4"
+  }
+]

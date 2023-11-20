@@ -1,9 +1,9 @@
-# Identity Manager Blazor
+# Identity Manager Blazor United
 Identity management system for [ASP.NET Core Identity](https://github.com/aspnet/AspNetCore/tree/master/src/Identity) for use with ASP.NET Core 8 and developed with [Blazor United](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0#build-a-full-stack-web-app-with-blazor) to supersede the following projects:
 
-[Identity Manager](https://github.com/mguinness/IdentityManager) - ASP.NET Core 1, 2
-[Identity Manager UI](https://github.com/mguinness/IdentityManagerUI) - ASP.NET Core 3, 5, 6
-[Identity Manager Blazor](https://github.com/mguinness/IdentityManagerBlazor) - ASP.NET Core 7
+* [Identity Manager](https://github.com/mguinness/IdentityManager) - ASP.NET Core 1, 2
+* [Identity Manager UI](https://github.com/mguinness/IdentityManagerUI) - ASP.NET Core 3, 5, 6
+* [Identity Manager Blazor](https://github.com/mguinness/IdentityManagerBlazor) - ASP.NET Core 7
 
 ## Introduction
 When creating a new Blazor Web App you have the option to change the authentication type to individual accounts to include the identity system into your project. This includes registration, login and several pages related to user account self management like 2FA and password reset.

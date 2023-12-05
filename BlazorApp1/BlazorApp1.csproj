@@ -8,13 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="FileBaseContext">
-      <HintPath>FileBaseContext.dll</HintPath>
-    </Reference>
-  </ItemGroup>  
-  
-  <ItemGroup>
-    <!--PackageReference Include="FileBaseContext" Version="1.0.2" /-->
+    <PackageReference Include="FileBaseContext" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.0" />

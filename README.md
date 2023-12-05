@@ -39,8 +39,6 @@ protected override void OnModelCreating(ModelBuilder builder)
 ## Setup
 As the example project uses [FileBaseContext](https://github.com/dualbios/FileBaseContext) as the database provider there is no database setup needed since the ASP.NET Identity Core tables are stored in files, however for your own project you should use a [Database Provider](https://docs.microsoft.com/en-us/ef/core/providers/) to store these.
 
-Due to pending [EF Core 8](https://github.com/dualbios/FileBaseContext/issues/6) upgrade there is currently a project reference to a DLL instead of the package.
-
 Run the project and you will be able to use the website to manage users, roles and claims.  With the provided Identity tables stored as files you can login as admin@example.com with "Password".
 
 ## Features

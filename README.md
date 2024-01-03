@@ -12,6 +12,29 @@ The missing piece to the puzzle is user management for the site. For ASP.NET mem
 
 ## Integration
 
+When creating a project choose the Blazor Web App template and select the Individual Accounts authentication type and WebAssembly for Interactive render mode.
+
+### Server Project
+
+In `ApplicationUser` you need to add the following properties.
+
+```CSharp
+public class ApplicationUser : IdentityUser
+{
+    public ICollection<IdentityUserRole<string>> Roles { get; set; }
+    public ICollection<IdentityUserClaim<string>> Claims { get; set; }
+}
+```
+
+Similarily after creating `ApplicationRole` you need to add a property.
+
+```CSharp
+public class ApplicationRole : IdentityRole
+{
+    public ICollection<IdentityRoleClaim<string>> Claims { get; set; }
+}
+```
+
 In `Program` you will have to include references to `ApplicationUser` and `ApplicationRole` that were added to the project.
 
 ```CSharp
@@ -26,15 +49,46 @@ builder.Services.AddIdentityCore<ApplicationUser>(options =>
 In your `ApplicationDbContext` you need to define the following navigation properties.
 
 ```CSharp
-protected override void OnModelCreating(ModelBuilder builder)
+public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser, ApplicationRole, string>(options)
 {
-    base.OnModelCreating(builder);
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        base.OnModelCreating(builder);
 
-    builder.Entity<ApplicationUser>().HasMany(p => p.Roles).WithOne().HasForeignKey(p => p.UserId).IsRequired().OnDelete(DeleteBehavior.Cascade);
-    builder.Entity<ApplicationUser>().HasMany(e => e.Claims).WithOne().HasForeignKey(e => e.UserId).IsRequired().OnDelete(DeleteBehavior.Cascade);
-    builder.Entity<ApplicationRole>().HasMany(r => r.Claims).WithOne().HasForeignKey(r => r.RoleId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+        builder.Entity<ApplicationUser>().HasMany(p => p.Roles).WithOne().HasForeignKey(p => p.UserId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+        builder.Entity<ApplicationUser>().HasMany(e => e.Claims).WithOne().HasForeignKey(e => e.UserId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+        builder.Entity<ApplicationRole>().HasMany(r => r.Claims).WithOne().HasForeignKey(r => r.RoleId).IsRequired().OnDelete(DeleteBehavior.Cascade);
+    }
 }
 ```
+
+After adding `IdentityController` you will need to add the following to `Program`.
+
+```CSharp
+builder.Services.AddControllers();
+...
+app.MapControllers();
+```
+
+### Client Project
+
+Add the following package references to the project:
+
+`Microsoft.Extensions.Http`
+`Microsoft.AspNetCore.Components.QuickGrid`
+
+You will also need to add the following to `Program`:
+
+```CSharp
+builder.Services.AddHttpClient("WebAPI", client => client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("WebAPI"));
+```
+
+In addition add the following components to the project:
+
+`Modal.razor`
+`Roles.razor`
+`Users.razor`
 
 ## Setup
 As the example project uses [FileBaseContext](https://github.com/dualbios/FileBaseContext) as the database provider there is no database setup needed since the ASP.NET Identity Core tables are stored in files, however for your own project you should use a [Database Provider](https://docs.microsoft.com/en-us/ef/core/providers/) to store these.

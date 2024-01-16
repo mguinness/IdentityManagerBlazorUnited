@@ -70,6 +70,10 @@ builder.Services.AddControllers();
 app.MapControllers();
 ```
 
+Added a reference to `bootstrap-icons.min.css` in `App.razor` for Bootstrap icons used in the project.
+
+Sample pages for template did not include `AccessDenied.razor` so added under Components\Account\Pages folder.
+
 ### Client Project
 
 Add the following package references to the project:
@@ -89,6 +93,8 @@ In addition add the following components to the project:
 `Modal.razor`
 `Roles.razor`
 `Users.razor`
+
+The `<_ExtraTrimmerArgs>--keep-metadata parametername</_ExtraTrimmerArgs>` option was added to property group in csproj to prevent trimming parameter names for [KeyValuePair constructor](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.-ctor).
 
 ## Setup
 As the example project uses [FileBaseContext](https://github.com/dualbios/FileBaseContext) as the database provider there is no database setup needed since the ASP.NET Identity Core tables are stored in files, however for your own project you should use a [Database Provider](https://docs.microsoft.com/en-us/ef/core/providers/) to store these.

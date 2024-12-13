@@ -1,5 +1,5 @@
 # Identity Manager Blazor United
-Identity management system for [ASP.NET Core Identity](https://github.com/aspnet/AspNetCore/tree/master/src/Identity) for use with ASP.NET Core 8 and developed with [Blazor United](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0#build-a-full-stack-web-app-with-blazor) to supersede the following projects:
+Identity management system for [ASP.NET Core Identity](https://github.com/aspnet/AspNetCore/tree/master/src/Identity) for use with ASP.NET Core 8/9 and developed with [Blazor United](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0#build-a-full-stack-web-app-with-blazor) to supersede the following projects:
 
 * [Identity Manager](https://github.com/mguinness/IdentityManager) - ASP.NET Core 1, 2
 * [Identity Manager UI](https://github.com/mguinness/IdentityManagerUI) - ASP.NET Core 3, 5, 6

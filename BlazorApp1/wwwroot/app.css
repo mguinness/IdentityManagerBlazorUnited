@@ -83,3 +83,7 @@ input[type=search]:focus {
     top: calc(50% - 1.25rem/2);
     background-image: url("data:image/svg+xml,%3Csvg fill='none' stroke='rgb(107 114 128)' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' b-nrli8fdfc6=''%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z' b-nrli8fdfc6=''%3E%3C/path%3E%3C/svg%3E");
 }
+
+.quickgrid tbody tr:not([aria-rowindex]) {
+    display: none;
+}

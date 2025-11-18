@@ -1,5 +1,5 @@
 # Identity Manager Blazor United
-Identity management system for [ASP.NET Core Identity](https://github.com/aspnet/AspNetCore/tree/master/src/Identity) for use with ASP.NET Core 8/9 and developed with [Blazor United](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0#build-a-full-stack-web-app-with-blazor) to supersede the following projects:
+Identity management system for [ASP.NET Core Identity](https://github.com/aspnet/AspNetCore/tree/master/src/Identity) for use with ASP.NET Core 8/9/10 and developed with [Blazor United](https://learn.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-8.0#build-a-full-stack-web-app-with-blazor) to supersede the following projects:
 
 * [Identity Manager](https://github.com/mguinness/IdentityManager) - ASP.NET Core 1, 2
 * [Identity Manager UI](https://github.com/mguinness/IdentityManagerUI) - ASP.NET Core 3, 5, 6
@@ -93,8 +93,6 @@ In addition add the following components to the project:
 `Modal.razor`
 `Roles.razor`
 `Users.razor`
-
-The `<_ExtraTrimmerArgs>--keep-metadata parametername</_ExtraTrimmerArgs>` option was added to property group in csproj to prevent trimming parameter names for [KeyValuePair constructor](https://learn.microsoft.com/en-us/dotnet/api/system.collections.generic.keyvaluepair-2.-ctor).
 
 ## Setup
 As the example project uses [FileBaseContext](https://github.com/dualbios/FileBaseContext) as the database provider there is no database setup needed since the ASP.NET Identity Core tables are stored in files, however for your own project you should use a [Database Provider](https://docs.microsoft.com/en-us/ef/core/providers/) to store these.
